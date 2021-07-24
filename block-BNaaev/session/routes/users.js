@@ -17,9 +17,7 @@ router.get('/register', (req, res, next) => {
 
 //handle register request
 router.post('/register', (req, res, next) => {
-  
   User.create(req.body, (err, user) => {
-
       if(err) {
         if(err.name === 'MongoError') {
           req.flash("error", "Email is already taken");
@@ -34,9 +32,6 @@ router.post('/register', (req, res, next) => {
     })
   });
   
-  
-
-
 //render login page
 router.get('/login', (req, res, next) => {
   
